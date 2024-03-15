@@ -30,7 +30,11 @@ namespace SifMonitorApi01.Controllers
             this.StartService(new CreateActivity(this.Dictionary, activity));
             return Ok();
         }
-
+        /// <summary>
+        /// Endpoint para obtener el top n de los usuarios con mayor inactividad.
+        /// </summary>
+        /// <param name="topUsers"></param>
+        /// <returns></returns>
         [HttpPost("UserInactivityTop")]
 
         public ActionResult<String> UserInactivityTop(TopUsersInactivity topUsers)
@@ -40,10 +44,18 @@ namespace SifMonitorApi01.Controllers
             return TopInactivity.Response;
         }
 
-        [HttpPost("EventsCreate")]
-        public IActionResult UserEventsCreate(UserEvents events)
+        [HttpPost("Events")]
+
+        public ActionResult<String> UserEvents()
         {
-            //TODO:Invocar el servivio que Crea los eventos de cada usuario en la BD.
+            return Ok();
+        }
+
+        [HttpPost("NumTransacrions")]
+
+        public ActionResult<String> NumTransactions()
+        {
+            //TOD: Invocar el servicio que trae el top de los usuarios con mayor numero de transacciones realizadas
             return Ok();
         }
     }

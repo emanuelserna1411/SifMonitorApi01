@@ -7,6 +7,7 @@
         public String Fecha { get; set; }
         public Double SessionTime { get; set; }
         public Double InactivityTime { get; set; }
+        public String Events{ get; set; }
 
         public UserActivity()
         {
